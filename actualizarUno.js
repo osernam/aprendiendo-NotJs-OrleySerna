@@ -3,15 +3,21 @@ var data = JSON.stringify({
     "collection": "Products",
     "database": "Fakestore",
     "dataSource": "Cluster0",
-    "projection": {
-        "description": 1,
-        "price":1
-    }
-});
+
+    "filter": {"title": "cantuflas"  },
+      "update": {
+          "$set": {
+              "title": "pantuflas",
+              
+          }
+      } 
+        }
+
+    );
             
 var config = {
     method: 'post',
-    url: 'https://data.mongodb-api.com/app/data-nlsxt/endpoint/data/v1/action/findOne',
+    url: 'https://data.mongodb-api.com/app/data-nlsxt/endpoint/data/v1/action/updateOne',
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',

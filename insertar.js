@@ -3,15 +3,25 @@ var data = JSON.stringify({
     "collection": "Products",
     "database": "Fakestore",
     "dataSource": "Cluster0",
-    "projection": {
-        "description": 1,
-        "price":1
-    }
-});
+    "document": {
+        "id":30,
+        "title":"chanclas",
+        "price":20000,
+        "description":"chanclas unisex talla 40",
+        "category":"accesorios",
+        "image":"https://placeimg.com/640/480/any",
+        "rating":{            
+            "rate":4,
+            "count":90
+        }
+        } 
+        }
+
+    );
             
 var config = {
     method: 'post',
-    url: 'https://data.mongodb-api.com/app/data-nlsxt/endpoint/data/v1/action/findOne',
+    url: 'https://data.mongodb-api.com/app/data-nlsxt/endpoint/data/v1/action/insertOne',
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',

@@ -3,15 +3,16 @@ var data = JSON.stringify({
     "collection": "Products",
     "database": "Fakestore",
     "dataSource": "Cluster0",
-    "projection": {
-        "description": 1,
-        "price":1
-    }
+    "filter": {
+        "status": "complete"
+      },
+    "sort": { "completedAt": 1 },
+    "limit": 10
 });
             
 var config = {
     method: 'post',
-    url: 'https://data.mongodb-api.com/app/data-nlsxt/endpoint/data/v1/action/findOne',
+    url: 'https://data.mongodb-api.com/app/data-nlsxt/endpoint/data/v1/action/find',
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',
